@@ -17,12 +17,14 @@
 ## Alkalmazott függvények
 
 **fuggvenyneve(par1,par2)->visszateresiErtek**:
-1. tablazatOsszeallit(lista)->txt - összeállítja a html kódot szöveges formátumban, minden sor végén legyen egy kuka!
-2. megjelenites(txt)->nincs - megjelníti egy html szoveget egy html elemben
-3. tablazatbaTesz(lista) - összeszedi az űrlapadatokat, és hozzáfűzi a listához, majd megjeleníti újra a táblázatot. - akkor hívódik meg, ha a Submit gombra kattintunk
+1. kartyaOsszeallit(lista)->txt - összeállítja a html kódot szöveges formátumban, minden kártyban legyen egy kosár!
+2. megjelenites(txt, htmlElem)->nincs - megjelníti egy html szoveget egy html elemben
+
 4. szuresNevSzerint(lista, szurtSzoveg) -> szurtLista - a szűrőbe írt szó alaján kilistázza azokat az adatokat a listából, amelyekben szerepel a név mezőjében az adott szó. 
-5. tablazatRendez(lista) - adott mező szerint rendezi a táblázatot. - akkor hívódik meg, ha a táblázat név fejlécmezőjére kattintunk. Berendezzük a listát, és megjelenítjük újra a táblázatot.
-6. kosarbaRakas(lista,index) - a listából egy adott termék adatait belerakjuk a kosárba
-7. kosarMegjelenites() ???
-8. sorTorles(lista, index) - minden sor végén legyen egy kuka, a sor indexével, erre a kukára kattintva töröljük az adott sort a listából, és újra megjelenítjük a táblázatot a módosult listával.
-9. kosarElemModositas() - a kosárban lévő termékek számát növelni ???
+
+
+5. kartyakatRendez(lista) -> rendezett lista :  akkor hívódik meg, ha a rendezés leugördülő mezőre kattintunk. 
+6. kosarbaRakas(objektum,lista) -> kosar lista :  a termék listából egy adott termék adatait (objektum) belerakjuk a kosár listába
+7. kosarOsszeallit(kosarLista) -> txt : egy táblázatba megjelenítjük a kosárba rakott termékek adatait
+8. termekTorlesKosarbol(lista, index) - minden sor végén legyen egy kuka, a sor indexével, erre a kukára kattintva töröljük az adott sort a listából, és újra megjelenítjük a táblázatot a módosult listával.
+9. kosarElemModositas() - a kosárban lévő termékek számát növelni 
