@@ -3,7 +3,7 @@
 
 import { termekekLISTA } from "./adat.js";
 import { megjelenites, tablazatOsszeallit } from "./fuggvenyek.js";
-import { tablazatRendez,szuresNevSzerint } from "./adatkezelo.js";
+import { tablazatRendez, szuresNevSzerint } from "./adatkezelo.js";
 
 
 
@@ -12,6 +12,7 @@ import { tablazatRendez,szuresNevSzerint } from "./adatkezelo.js";
 let nevIrany = 1;
 init(termekekLISTA);
 nevRendezEsemeny();
+nevSzuresEsemeny();
 
 
 export function init(lista) {
@@ -27,14 +28,15 @@ init(termekekLISTA)
 
 
 
+
 function nevRendezEsemeny(lista) {
 
-  const h2Element = $('h2').textContent;
+  $(".termekek .kulso .belso").each(function() {
+    const h2szoveg = $(this).find("h2").text();
+  });
 
-  const nevELEM = $(".termekek h2");
-  nevELEM.on("click", function () {
+  $(".rendezes").on("click", function() {
     const LISTA = tablazatRendez(lista, nevIrany);
-
     nevIrany *= -1;
     init(LISTA);
   });
@@ -51,22 +53,21 @@ function nevRendezEsemeny(lista) {
 
 
 
-
-
-
-
-
 function nevSzuresEsemeny() {
-  /* a szűrőbe írt szó alaján kilistázza azokat az adatokat a listából, amelyekben szerepel a név mezőjében az adott szó. 
-Ezután megjelenítjük a szűrt listát az oldalon. 
-Akkor fog lefutni, amikor megváltozik a szűrőmező tartalma  */
-  const szuroELEM = $("#szNev");
+
+  const szuroELEM = $("#termekNev");
   szuroELEM.on("keyup", function () {
     let szuroSZoveg = szuroELEM.val();
-    const LISTA = szuresNevSzerint(emberekLISTA, szuroSZoveg);
+    const LISTA = szuresNevSzerint(termekekLISTA, szuroSZoveg);
     init(LISTA);
   });
 }
-/* szorgalmi: szűrés más mezők alaőpján is működjön  */
+
+
+
+
+
+
+
 
 
